@@ -53,6 +53,7 @@ parameters:
         keysurvey_password: "Bi11ieBean!"
         router.request_context.base_url: "/stang"
 ```
+
 Install dependencies
 ```bash
 composer install
@@ -68,6 +69,32 @@ composer require stfalcon/tinymce-bundle:0.3.9
 
 If this dependency didn't exist in the composer.json, you can remove it now **from that file** (as it's already installed).
 
+Now let's flash the database. First create an empty database using the user/password you have in your `app/config/parameters.yml` and using that database_name
+
+```bash
+$ mysql -u root -p
+mysql> create database stangs_dev;
+```
+
+Download the database from the server (be sure you have credentials)
+
+```bash
+$ php app/console database:flash
+Remote Server Domain or IP: 67.225.129.42
+Remote Server User: diego
+Remote Server Password:
+Remote Server Database Name: diego_stangsdb
+```
+
+This takes a while. If it downloaded the .sql script at `/tmp` but *it failed* installing locally you can do it manually
+```bash
+$ mysql -u root -p
+mysql> use stangs_dev;
+mysql> source /path/to/script.sql
+```
+
+After some minutes the db should be installed
+
 Now edit these `/php.core` lines 35-39 to your own working copy:
 ```php
 } else if(gethostname() == 'Retinilla.local' || gethostname() == 'Retinilla' || gethostname() == '127.0.0.1' || gethostname() == 'localhost'){ // Pablo's working copy
@@ -77,7 +104,6 @@ Now edit these `/php.core` lines 35-39 to your own working copy:
     $root2 = 'localhost:80';
 ```
 
-Finally change the project "developer mode" if you want
-```bash
-touch .dev
-```
+It should be working now. Open a browser with your local server path [http://localhost/stang](``http://localhost/stang``).
+
+If you get an error or nothing happens clear the cache with ``php app/console cache:clear -e prod`` or change the project to "developer mode" for error details ``touch .dev #creates a hidden file``
