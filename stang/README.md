@@ -4,7 +4,7 @@
 ## Requirements
 
 ### apache, php and mysql
-Download [MAMP](https://www.mamp.info/en/) or install the separately
+Download [MAMP](https://www.mamp.info/en/) or install them separately
 ### git
 ```bash
 brew install git # Mac OS X
@@ -61,8 +61,12 @@ bower install
 php app/console cache:clear -e prod
 ```
 
-If the "php cache:clear" command **fails with error** `non-existent service "assets.packages"` install this:
+- If the "php cache:clear" command **fails with an error** related to `date.timezone` use this command (with your location and file)
+```bash
+echo "date.timezone = Europe/Madrid" >> path/to/your/php.ini
+```
 
+- If the error was `non-existent service "assets.packages"` install this:
 ```bash
 composer require stfalcon/tinymce-bundle:0.3.9
 ```
@@ -107,3 +111,9 @@ Now edit these `/php.core` lines 35-39 to your own working copy:
 It should be working now. Open a browser with your local server path [http://localhost/stang](``http://localhost/stang``).
 
 If you get an error or nothing happens clear the cache with ``php app/console cache:clear -e prod`` or change the project to "developer mode" for error details ``touch .dev #creates a hidden file``
+
+Under **linux** php is not usually configured to use the default `short_open_tag` so you may have errors related to this. Just edit your `php.ini` and change the value to On
+```bash
+short_open_tag = Off # before
+short_open_tag = On  # after
+```
