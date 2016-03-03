@@ -99,7 +99,7 @@ mysql> source /path/to/script.sql
 
 After some minutes the db should be installed
 
-Now edit these `/php.core` lines 35-39 to your own working copy:
+Now edit these `/core.php` lines 35-39 to your own working copy:
 ```php
 } else if(gethostname() == 'Retinilla.local' || gethostname() == 'Retinilla' || gethostname() == '127.0.0.1' || gethostname() == 'localhost'){ // Pablo's working copy
     // Pablo Dev
