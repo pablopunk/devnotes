@@ -10,3 +10,9 @@ wget http://dev2day.de/pms/pool/main/p/plexmediaserver-installer/plexmediaserver
 wget http://dev2day.de/pms/pool/main/p/plexmediaserver/plexmediaserver_0.9.16.4.1911-ee6e505-2~jessie_all.deb
 sudo dpkg -i plex*
 ```
+
+Sometimes you may run into permissions problems. You can edit the user Plex is running as:
+```bash
+sudo vim /etc/default/plexmediaserver
+# change this line PLEX_MEDIA_SERVER_USER=plex and write your user there
+```
