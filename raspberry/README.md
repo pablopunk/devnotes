@@ -16,3 +16,15 @@ Sometimes you may run into permissions problems. You can edit the user Plex is r
 sudo vim /etc/default/plexmediaserver
 # change this line PLEX_MEDIA_SERVER_USER=plex and write your user there
 ```
+
+### Mount raspberry on the Mac Finder as a Network Drive
+# install Netatalk
+sudo apt-get install netatalk
+# stop it
+sudo /etc/init.d/netatalk stop
+# edit the preferences
+sudo vim /etc/netatalk/AppleVolumes.default
+# in this line you can change the directory and the name it will take
+~/      "Home Directory"
+# save it and start it again
+sudo /etc/init.d/netatalk start
