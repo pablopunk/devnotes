@@ -18,6 +18,7 @@ sudo vim /etc/default/plexmediaserver
 ```
 
 ### Mount raspberry on the Mac Finder as a Network Drive
+```bash
 # install Netatalk
 sudo apt-get install netatalk
 # stop it
@@ -28,3 +29,4 @@ sudo vim /etc/netatalk/AppleVolumes.default
 ~/      "Home Directory"
 # save it and start it again
 sudo /etc/init.d/netatalk start
+```
