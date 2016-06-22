@@ -30,3 +30,6 @@ sudo vim /etc/netatalk/AppleVolumes.default
 # save it and start it again
 sudo /etc/init.d/netatalk start
 ```
+
+### Fix permissions problems on Transmission Web Interface
+[http://askubuntu.com/questions/221081/permission-denied-when-downloading-with-transmission-deamon](http://askubuntu.com/questions/221081/permission-denied-when-downloading-with-transmission-deamon)
