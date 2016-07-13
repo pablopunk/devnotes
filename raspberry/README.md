@@ -1,6 +1,10 @@
 # Raspberry
 
-### installing [plex on Ubuntu Mate](http://dev2day.de/pms/pool/main/p/)
+### Mount a drive automatically
+
+Check [Linux notes](https://github.com/pablopunk/devnotes/tree/master/linux) for *fstab* instructions. If fstab tries to mount a drive that is not connected, **the raspberry won't boot**. 
+
+### Installing [plex on Ubuntu Mate](http://dev2day.de/pms/pool/main/p/)
 
 ```bash
 ## Install both of this packages
