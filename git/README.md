@@ -21,3 +21,13 @@ rm -Rf .git/refs/original
 git gc --aggressive --prune=now
 git push --force
 ```
+
+### ignore a file just locally
+
+You can add files and directories to the file `.git/info/exclude` like you do inside a `.gitignore`.
+
+If you already have unstaged changes you must run the following after editing your ignore-patterns:
+ 
+```shell
+git update-index --assume-unchanged [<file>...]
+```
