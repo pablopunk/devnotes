@@ -1,6 +1,10 @@
 # Raspberry
 
-### installing [plex on Ubuntu Mate](http://dev2day.de/pms/pool/main/p/)
+### Mount a drive automatically
+
+Check [Linux notes](https://github.com/pablopunk/devnotes/tree/master/linux) for *fstab* instructions. If fstab tries to mount a drive that is not connected, **the raspberry won't boot**. 
+
+### Installing [plex on Ubuntu Mate](http://dev2day.de/pms/pool/main/p/)
 
 ```bash
 ## Install both of this packages
@@ -30,3 +34,6 @@ sudo vim /etc/netatalk/AppleVolumes.default
 # save it and start it again
 sudo /etc/init.d/netatalk start
 ```
+
+### Fix permissions problems on Transmission Web Interface
+[http://askubuntu.com/questions/221081/permission-denied-when-downloading-with-transmission-deamon](http://askubuntu.com/questions/221081/permission-denied-when-downloading-with-transmission-deamon)
